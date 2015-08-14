@@ -62,5 +62,13 @@ describe('The Word Definitions web app', {:type => :feature}) do
       expect(page).to have_content(@index_header)
       expect(page).to have_content(@test_word.self().capitalize())
     end
+    it('shows all words in alphabetical order') do
+      new_word = 'barmonica'
+      visit('/words/new')
+      fill_in('word_name', :with => new_word)
+      click_button('Submit')
+      expect(page).to have_selector("ul#sorted_word_list li:nth-child(1)", text: new_word.capitalize())
+      expect(page).to have_selector("ul#sorted_word_list li:nth-child(2)", text: @test_word.self().capitalize())
+    end
   end
 end
