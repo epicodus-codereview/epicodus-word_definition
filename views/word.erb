@@ -1,0 +1,15 @@
+<h2><%= @word.self() %></h2>
+
+<ol>
+  <% @word.definitions().each() do |definition| %>
+    <li><%= definition.self() %></li>
+  <% end %>
+</ol>
+
+<form action="/words/<%= @word.self() %>" method="post">
+  <div class="form-group">
+    <label for="new_definition"></label>
+    <input type="text" class="form-control" id="new_definition" name="new_definition">
+  </div>
+  <button type="submit" class="btn">Add New Definition</button>
+</form>

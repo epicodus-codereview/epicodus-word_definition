@@ -29,5 +29,6 @@ get('/words/new') do
 end
 
 get('/words/:name') do
+  @word = Word.find(:name)
   erb(:word)
 end

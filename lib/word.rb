@@ -22,4 +22,12 @@ class Word
   define_singleton_method(:clear) do
     @@Words.clear()
   end
+
+  define_singleton_method(:find) do |name|
+    found_word = nil
+    @@Words.each() do |word|
+      found_word = word if word.self().eql?(name)
+    end
+    found_word
+  end
 end

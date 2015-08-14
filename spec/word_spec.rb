@@ -48,4 +48,11 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe('.find') do
+    it('returns a word from the Word class array after searching based on name') do
+      @test_word.save()
+      expect(Word.find(@test_word.self())).to(eq(@test_word))
+    end
+  end
 end
