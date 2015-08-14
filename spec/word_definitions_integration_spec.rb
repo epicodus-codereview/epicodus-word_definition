@@ -34,7 +34,17 @@ describe('The Word Definitions web app', {:type => :feature}) do
   end
 
   describe('the unique word path') do
-    it('takes the user to the unique word page') do
+    it('takes the user to the selected word page') do
+      visit('/')
+      expect(page).to have_content(@index_header)
+      click_link(@test_word.self())
+      expect(page).to have_content(@test_word.self())
+      expect(page).to have_content('See All Words')
+    end
+  end
+
+  describe('the add new definition path') do
+    it('adds a new definition to the word page') do
       visit("/words/#{@test_word.self()}")
       expect(page).to have_content(@test_word.self())
       expect(page).to have_content("No definition exists for #{@test_word.self()} yet!")
