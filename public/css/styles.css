@@ -16,6 +16,9 @@ body {
   color: rgba(255,200,255,0.5);
 }
 
+.add-new-word-link {
+  font-size: 1.5em;
+}
 .return-home-link {
   font-size: 0.875em;
 }

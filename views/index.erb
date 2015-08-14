@@ -1,9 +1,13 @@
 <h2 class="standard-header">Word Definitions</h2>
 
 <ul>
+  <% word_list = [] %>
   <% @words.each() do |word| %>
-    <li><a href="/words/<%= word.self() %>"><%= word.self().capitalize() %></a></li>
+    <% word_list.push(word.self()) %>
+  <% end %>
+  <% word_list.sort().each() do |word| %>
+    <li><a href="/words/<%= word %>"><%= word.capitalize() %></a></li>
   <% end %>
 </ul>
 
-<a href="/words/new">Add New Word</a>
+<a class="add-new-word-link" href="/words/new">Add New Word</a>

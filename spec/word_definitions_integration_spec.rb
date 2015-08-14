@@ -24,12 +24,12 @@ describe('The Word Definitions web app', {:type => :feature}) do
   end
 
   describe('the post to index path') do
-    it('takes the user to index to see listing of words') do
+    it('takes the user to index to see listing of capitalized words') do
       visit('/words/new')
       expect(page).to have_content(@new_word_header)
       fill_in('word_name', :with => @test_word.self())
       click_button('Submit')
-      expect(page).to have_content(@test_word.self())
+      expect(page).to have_content(@test_word.self().capitalize())
     end
   end
 
@@ -37,7 +37,7 @@ describe('The Word Definitions web app', {:type => :feature}) do
     it('takes the user to the selected word page') do
       visit('/')
       expect(page).to have_content(@index_header)
-      click_link(@test_word.self())
+      click_link(@test_word.self().capitalize())
       expect(page).to have_content(@test_word.self())
       expect(page).to have_content('See All Words')
     end
@@ -57,10 +57,10 @@ describe('The Word Definitions web app', {:type => :feature}) do
   describe('the return to index path') do
     it('takes the user back to the index to see the listing of added words') do
       visit("/words/#{@test_word.self()}")
-      expect(page).to have_content(@test_word.self())
+      expect(page).to have_content(@test_word.self().capitalize())
       click_link('See All Words')
       expect(page).to have_content(@index_header)
-      expect(page).to have_content(@test_word.self())
+      expect(page).to have_content(@test_word.self().capitalize())
     end
   end
 end
