@@ -40,4 +40,11 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it('saves the word instance to the Word class array') do
+      @test_word.save()
+      expect(Word.all()).to(eq([@test_word]))
+    end
+  end
 end
