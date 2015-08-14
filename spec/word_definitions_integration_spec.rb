@@ -22,4 +22,15 @@ describe('The Word Definitions web app', {:type => :feature}) do
       expect(page).to have_content('harmonica')
     end
   end
+
+  describe('the unique word path') do
+    it('takes the user to the unique word page') do
+      visit('/words/harmonica')
+      expect(page).to have_content('harmonica')
+      expect(page).to have_content('No definition exists for harmonica yet!')
+      fill_in('new_definition', :with => 'a musical wind instrument consisting of a small rectangular case containing a set of metal reeds connected to a row of holes, over which the player places the mouth and exhales and inhales to produce the tones.')
+      click_button('Add')
+      expect(page).to have_content('a musical wind instrument consisting of a small rectangular case containing a set of metal reeds connected to a row of holes, over which the player places the mouth and exhales and inhales to produce the tones.')
+    end
+  end
 end
