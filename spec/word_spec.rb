@@ -4,7 +4,7 @@ require('word')
 describe(Word) do
   before() do
     @test_word = Word.new({:self => 'word'})
-    @test_word_definition = 'a unit of language, consisting of one or more spoken sounds or their written representation, that functions as a principal carrier of meaning.'
+    @test_word_definition = Definition.new({:self => 'a unit of language, consisting of one or more spoken sounds or their written representation, that functions as a principal carrier of meaning.'})
   end
 
   describe('#self') do
