@@ -1,0 +1,9 @@
+<h2>Word Definitions</h2>
+
+<ul>
+  <% @words.each() do |word| %>
+    <li><a href="/words/<%= word.self() %>"><%= word.self() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/words/new">Add New Word</a>
