@@ -14,7 +14,6 @@ post('/') do
   word_definition = params.fetch('word_definition')
 
   new_word = Word.new({:self => word_name})
-  # User is allowed to add a word sans definition
   if !word_definition.empty?()
     new_definition = Definition.new({:self => word_definition,
                                      :word => new_word})

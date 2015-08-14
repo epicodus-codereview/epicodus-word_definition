@@ -12,6 +12,7 @@ body {
 .standard-label {
   color: rgba(255,255,255,0.6)
 }
+
 .ordered-definition-list {
   color: rgba(255,200,255,0.5);
 }
@@ -19,6 +20,11 @@ body {
 .add-new-word-link {
   font-size: 1.5em;
 }
+
 .return-home-link {
   font-size: 0.875em;
+}
+
+.add-definition:hover {
+    color: rgba(255,0,255,0.6)
 }

@@ -15,7 +15,7 @@
 <form action="/words/<%= @word.self() %>" method="post">
   <div class="form-group">
     <label for="new_definition" class="standard-label">New Definition</label>
-    <input type="text" class="form-control" id="new_definition" name="new_definition">
+    <textarea class="form-control" name="new_definition" id="new_definition" rows="8" cols="40" placeholder="Type additional definition here"></textarea>
   </div>
   <button type="submit" class="btn">Add</button>
 </form>
