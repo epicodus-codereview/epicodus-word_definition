@@ -1,0 +1,21 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1437572848259-df63caa1a552?q=80&fm=jpg&s=993c72dbed07e84925aee0f935bb31a7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white
+}
+
+.standard-header {
+  color: rgba(255,255,255,0.8)
+}
+
+.standard-label {
+  color: rgba(255,255,255,0.6)
+}
+.ordered-definition-list {
+  color: rgba(255,200,255,0.5);
+}
+
+.return-home-link {
+  font-size: 0.875em;
+}

@@ -1,8 +1,8 @@
-<h2>Word Definitions</h2>
+<h2 class="standard-header">Word Definitions</h2>
 
 <ul>
   <% @words.each() do |word| %>
-    <li><a href="/words/<%= word.self() %>"><%= word.self() %></a></li>
+    <li><a href="/words/<%= word.self() %>"><%= word.self().capitalize() %></a></li>
   <% end %>
 </ul>
 

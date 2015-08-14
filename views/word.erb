@@ -1,4 +1,4 @@
-<h2><%= @word.self() %></h2>
+<h2 class="standard-header"><%= @word.self().capitalize() %></h2>
 
 <div class="ordered-definition-list">
   <% if @word.definitions().length().>(0) %>
@@ -14,7 +14,7 @@
 
 <form action="/words/<%= @word.self() %>" method="post">
   <div class="form-group">
-    <label for="new_definition">New Definition</label>
+    <label for="new_definition" class="standard-label">New Definition</label>
     <input type="text" class="form-control" id="new_definition" name="new_definition">
   </div>
   <button type="submit" class="btn">Add</button>
