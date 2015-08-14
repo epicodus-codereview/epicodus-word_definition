@@ -34,4 +34,10 @@ describe(Word) do
       expect(@test_word.definitions()).to(eq([@test_word_definition, @test_word_definition2]))
     end
   end
+
+  describe('.all') do
+    it('starts out empty') do
+      expect(Word.all()).to(eq([]))
+    end
+  end
 end
