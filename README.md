@@ -1,6 +1,6 @@
 # Word Definitions App
 
-##### _A web app to view/modify/add words and their definitions, August 7, 2015_
+##### _A web app to view and add words and their definition(s), August 7, 2015_
 
 #### By **_Vaughn Dice_**
 
