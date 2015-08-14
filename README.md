@@ -8,6 +8,8 @@
 
 _Using this Word Definitions app, users can view an up-to-date list of words.  After clicking on a word, they can see the word's definition.  Here, they may add one or more definitions to any word._
 
+_**This app is live!** It has been deployed via Heroku and can be seen  [**here**](https://epicodus-word-definition.herokuapp.com/)._
+
 ## Setup
 
 * _Clone this repository_
