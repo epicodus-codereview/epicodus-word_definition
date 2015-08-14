@@ -14,10 +14,12 @@ post('/') do
   word_definition = params.fetch('word_definition')
 
   new_word = Word.new({:self => word_name})
-  new_definition = Definition.new({:self => word_definition,
-                                   :word => new_word})
-
-  new_word.add_definition(new_definition)
+  # User is allowed to add a word sans definition
+  if !word_definition.empty?()
+    new_definition = Definition.new({:self => word_definition,
+                                     :word => new_word})
+    new_word.add_definition(new_definition)
+  end
   new_word.save()
 
   @words = Word.all()
@@ -29,6 +31,18 @@ get('/words/new') do
 end
 
 get('/words/:name') do
-  @word = Word.find(:name)
+  word_name = params.fetch('name')
+  @word = Word.find(word_name)
+  erb(:word)
+end
+
+post('/words/:name') do
+  word_name = params.fetch('name')
+  @word = Word.find(word_name)
+
+  new_definition_string = params.fetch('new_definition')
+  new_definition = Definition.new({:self => new_definition_string,
+                                   :word => @word})
+  @word.add_definition(new_definition)
   erb(:word)
 end

@@ -1,15 +1,26 @@
 <h2><%= @word.self() %></h2>
 
-<ol>
-  <% @word.definitions().each() do |definition| %>
-    <li><%= definition.self() %></li>
+<div class="ordered-definition-list">
+  <% if @word.definitions().length().>(0) %>
+    <ol>
+      <% @word.definitions().each() do |definition| %>
+        <li><%= definition.self() %></li>
+      <% end %>
+    </ol>
+  <% else %>
+    <h3>No definition exists for <%= @word.self() %> yet!</h3>
   <% end %>
-</ol>
+</div>
 
 <form action="/words/<%= @word.self() %>" method="post">
   <div class="form-group">
-    <label for="new_definition"></label>
+    <label for="new_definition">New Definition</label>
     <input type="text" class="form-control" id="new_definition" name="new_definition">
   </div>
-  <button type="submit" class="btn">Add New Definition</button>
+  <button type="submit" class="btn">Add</button>
 </form>
+
+<div class="return-home-link">
+  <p></p>
+  <a href="/">See All Words</a>
+</div>
