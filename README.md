@@ -1,12 +1,12 @@
 # Word Definitions App
 
-##### _Users can add new words and definitions as well as listing all added, August 7, 2015_
+##### _A web app to view/modify/add words and their definitions, August 7, 2015_
 
 #### By **_Vaughn Dice_**
 
 ## Description
 
-_Using this Word Definitions app, users can add words and their definitions. The homepage shows an up-to-date listing of all words added._
+_Using this Word Definitions app, users can view an up-to-date list of words.  After clicking on a word, they can see the word's definition.  Here, they may add one or more definitions to any word._
 
 ## Setup
 
