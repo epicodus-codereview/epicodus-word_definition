@@ -3,13 +3,13 @@ require('word')
 
 describe(Word) do
   before() do
-    @test_word = Word.new({:name => 'word'})
+    @test_word = Word.new({:self => 'word'})
     @test_word_definition = 'a unit of language, consisting of one or more spoken sounds or their written representation, that functions as a principal carrier of meaning.'
   end
 
-  describe('#name') do
+  describe('#self') do
     it('returns the word itself') do
-      expect(@test_word.name()).to(eq('word'))
+      expect(@test_word.self()).to(eq('word'))
     end
   end
 
