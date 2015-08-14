@@ -3,6 +3,7 @@ require('word')
 
 describe(Word) do
   before() do
+    Word.clear()
     @test_word = Word.new({:self => 'word'})
     @test_word_definition = Definition.new({:self => 'a unit of language, consisting of one or more spoken sounds or their written representation, that functions as a principal carrier of meaning.',
                                             :word => @test_word})
@@ -35,16 +36,16 @@ describe(Word) do
     end
   end
 
-  describe('.all') do
-    it('starts out empty') do
-      expect(Word.all()).to(eq([]))
-    end
-  end
-
   describe('#save') do
     it('saves the word instance to the Word class array') do
       @test_word.save()
       expect(Word.all()).to(eq([@test_word]))
+    end
+  end
+
+  describe('.all') do
+    it('starts out empty') do
+      expect(Word.all()).to(eq([]))
     end
   end
 end

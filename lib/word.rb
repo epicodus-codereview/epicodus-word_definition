@@ -18,4 +18,8 @@ class Word
   define_singleton_method(:all) do
     @@Words
   end
+
+  define_singleton_method(:clear) do
+    @@Words.clear()
+  end
 end
